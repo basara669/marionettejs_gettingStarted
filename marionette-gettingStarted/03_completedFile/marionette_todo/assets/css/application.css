@@ -1,0 +1,16 @@
+body{
+    padding-top: 60px;
+}
+
+ul{
+    margin-top: 20px;
+}
+li{
+
+    list-style: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    color:gray;
+}

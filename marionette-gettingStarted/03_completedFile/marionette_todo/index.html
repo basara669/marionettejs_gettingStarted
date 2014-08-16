@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Marionette first step</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./assets/css/application.css"/>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Marionetteでtodoアプリ</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="add-region" class="container"></div>
+
+<div id="main-region" class="container">
+    <p>何かが間違っている…(´・ω・｀)</p>
+</div>
+
+<script type="text/template" id="task-template">
+            <%- title %>
+    <span class="btn btn-sm btn-default js-delete">delete</span>
+</script>
+
+<script type="text/template" id="add-template">
+    <form action="" id="addTask" class="form-inline">
+        <input type="text" id="title" class="form-control">
+        <input type="submit" value="add" class="btn  btn-primary">
+    </form>
+</script>
+
+
+<script src="./assets/js/vender/jquery-1.11.0.min.js"></script>
+<script src="./assets/js/vender/bootstrap.min.js"></script>
+<script src="./assets/js/vender/underscore-min.js"></script>
+<script src="./assets/js/vender/backbone-min.js"></script>
+<script src="./assets/js/vender/backbone.marionette.min.js"></script>
+
+<script src="./assets/js/app.js"></script>
+<script src="./assets/js/model/todo_model.js"></script>
+<!--<script src="./assets/js/apps/layout/todo_layout.js"></script>-->
+<script src="./assets/js/apps/todos/list/list_view.js"></script>
+<script src="./assets/js/apps/todos/list/list_controller.js"></script>
+<script src="./assets/js/apps/todos/add/add_view.js"></script>
+<!--<script src="./assets/js/apps/todos/add/add_controller.js"></script>-->
+
+<script>
+    TodoAppManager.start();
+</script>
+
+</body>
+</html>
+
+
+

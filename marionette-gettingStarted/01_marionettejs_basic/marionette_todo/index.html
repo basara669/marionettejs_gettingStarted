@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Marionette first step</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./assets/css/application.css"/>
+</head>
+<body>
+
+<div id="main-region" class="container">
+    <p>何かが間違っている…(´・ω・｀)</p>
+</div>
+
+<script type="text/template" id="static-text">
+    <p>これが表示されればOK</p>
+</script>
+
+<script src="./assets/js/vender/jquery-1.11.0.min.js"></script>
+<script src="./assets/js/vender/bootstrap.min.js"></script>
+<script src="./assets/js/vender/underscore-min.js"></script>
+<script src="./assets/js/vender/backbone-min.js"></script>
+<script src="./assets/js/vender/backbone.marionette.min.js"></script>
+
+<!-- ↓ここから記述を開始↓ -->
+<script>
+var TodoAppManager = new Marionette.Application();
+TodoAppManager.addRegions({
+	mainRegion:"#main-region"
+});
+TodoAppManager.StaticView = Backbone.Marionette.ItemView.extend({
+        template:"#static-text"
+    });
+TodoAppManager.on("initialize:after", function(){
+	var static_view = new TodoAppManager.StaticView();
+	TodoAppManager.mainRegion.show(static_view);
+});
+TodoAppManager.start();
+</script>
+
+</body>
+</html>
